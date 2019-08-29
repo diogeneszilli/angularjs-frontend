@@ -7,7 +7,7 @@ export default class ListController {
     this.findAll();
     this.cols = [
       {
-        label: "Código Processo",
+        label: "Código do Processo",
         value: "id",
         type: "text"
       }

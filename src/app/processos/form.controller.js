@@ -14,7 +14,7 @@ export default class FormController {
     this.findUsuarios();
     this.cols = [
       {
-        label: "Login",
+        label: "Usuários",
         value: "login",
         type: "text"
       }
@@ -60,10 +60,21 @@ export default class FormController {
 
   incluirUsuario() {
     this.usuariosAdicionados.push(this.usuario);
+    this.usuarios = this.arrayRemove(this.usuarios, this.usuario.id);
   }
 
   removerUsuario(usuario) {
-    this.usuariosAdicionados.pop(usuario);
+    this.usuariosAdicionados = this.arrayRemove(
+      this.usuariosAdicionados,
+      usuario.id
+    );
+    this.usuarios.push(usuario);
+  }
+
+  arrayRemove(arr, value) {
+    return arr.filter(function(ele) {
+      return ele.id != value;
+    });
   }
 }
 
