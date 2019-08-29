@@ -14,8 +14,13 @@ export default class FormController {
     this.findUsuarios();
     this.cols = [
       {
-        label: "Usuários",
+        label: "Usuário",
         value: "login",
+        type: "text"
+      },
+      {
+        label: "Parecer",
+        value: "descricao",
         type: "text"
       }
     ];
@@ -44,6 +49,7 @@ export default class FormController {
       this.record = response;
       this.record.pareceres.forEach(parecer => {
         this._usuarioService.findById(parecer.usuario.id).then(response => {
+          response.descricao = parecer.descricao;
           this.usuariosAdicionados.push(response);
         });
       });

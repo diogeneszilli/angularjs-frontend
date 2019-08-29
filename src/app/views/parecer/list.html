@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline" ng-submit="vm.load()">
+      <h5>{{ vm.title }}</h5>
+          <div class="form-group form-inline" style="width: 100%;">
+            <select style="width: 78%;" ng-model="vm.usuario" class="form-control" ng-options="i.login for i in vm.usuarios"></select>
+            </select>
+            <button style="width: 20%; margin-left: 2%;" ng-disabled="!vm.usuario" ng-click="vm.buscar(vm.usuario.id)" class="btn btn-success">Buscar</a>
+          </div>
+    </form>
+  </nav>
+  <ui-table cols="vm.cols" data="vm.processos">
+    <actions>
+      <a
+        class="btn btn-sm btn-success"
+        ui-sref="app.parecer.edit({id: $parent.$rec.id, idUsuario: vm.usuario.id})"
+        >Adicionar parecer</a
+      >
+    </actions>
+  </ui-table>
+</div>

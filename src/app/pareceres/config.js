@@ -16,7 +16,7 @@ export const parecerConfig = $stateProvider => {
     })
     .state("app.parecer.edit", {
       template: require("@views/parecer/form.html"),
-      url: "/{id}",
+      url: "/{id}/{idUsuario}",
       controller: FormController,
       controllerAs: "vm"
     });

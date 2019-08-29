@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row justify-content-sm-center">
+    <div class="col-sm-8">
+      <h2 class="title">{{ vm.title }}</h2>
+      <form>
+        <ui-input
+          msg-class="muted"
+          ng-disabled
+          ng-model="vm.parecer.usuario.login"
+          label="Usuário"
+        >
+        </ui-input>
+        <ui-input
+          ng-model="vm.parecer.descricao"
+          type="text"
+          label="Descrição"
+        ></ui-input>
+        <div style="margin-top: 2%">
+          <button ng-click="vm.save()" type="button" class="btn btn-primary">
+            <span ng-show="!vm._id">Salvar Registro</span>
+            <span ng-show="vm._id">Atualizar Registro</span>
+          </button>
+          <a ui-sref="app.usuario.list" class="btn btn-danger">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

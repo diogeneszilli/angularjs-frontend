@@ -4,7 +4,7 @@ export default class ProcessoService {
     this.url = "http://localhost:8090/api/processos";
   }
 
-  findParecerPendente(id) {
+  findParecerPendenteByUserId(id) {
     return this.http
       .get(this.url + "/parecer-pendente/" + id)
       .then(function(response) {
