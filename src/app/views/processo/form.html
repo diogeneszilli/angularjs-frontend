@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row justify-content-sm-center">
+      <div class="col-sm-8">
+        <h2 class="title">{{ vm.title }}</h2>
+        <form>
+            <div ng-show="!vm._id">
+          <form class="form-inline"></form>
+          <label>Usuário</label>
+          <div class="form-group form-inline" style="width: 100%;">
+            <select style="width: 78%;" ng-model="vm.usuario" class="form-control" ng-options="i.login for i in vm.usuarios"></select>
+            </select>
+            <button style="width: 20%; margin-left: 2%;" ng-disabled="!vm.usuario" ng-click="vm.incluirUsuario()" class="btn btn-success">Incluir</a>
+          </div>
+          </div>
+          <ui-table cols="vm.cols" data="vm.usuariosAdicionados">
+              <actions ng-show="!vm._id">
+                <button
+                  ng-click="vm.removerUsuario($parent.$rec)"
+                  class="btn btn-sm btn-danger"
+                  type="button"
+                >
+                  Remover
+                </button>
+              </actions>
+            </ui-table>
+  
+          <button ng-show="!vm._id" ng-click="vm.save()" type="button" class="btn btn-primary">
+            <span>Salvar Registro</span>
+          </button>
+          <a ui-sref="app.processo.list" class="btn btn-danger">Cancelar</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  

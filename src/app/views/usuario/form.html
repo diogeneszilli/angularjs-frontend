@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row justify-content-sm-center">
+    <div class="col-sm-8">
+      <h2 class="title">{{ vm.title }}</h2>
+      <form>
+        <ui-input msg-class="muted" ng-model="vm.record.login" label="Login">
+        </ui-input>
+        <ui-input
+          ng-if="!vm.record.id"
+          ng-model="vm.record.senha"
+          type="password"
+          label="Senha"
+        ></ui-input>
+        <ui-input
+          ng-if="vm.record.id"
+          ng-model="vm.record.senha"
+          type="password"
+          label="Nova Senha"
+        ></ui-input>
+        <label>Tipo de Usuário</label>
+          <select ng-selected="vm.tipoUsuario" ng-model="vm.tipoUsuario" class="form-control" ng-options="i.tipo for i in vm.tiposUsuario track by i._id"></select>
+          </select>
+          <div style="margin-top: 2%">
+        <button ng-click="vm.save()" type="button" class="btn btn-primary">
+          <span ng-show="!vm._id">Salvar Registro</span>
+          <span ng-show="vm._id">Atualizar Registro</span>
+        </button>
+        <a ui-sref="app.usuario.list" class="btn btn-danger">Cancelar</a>
+    </div>  
+    </form>
+    </div>
+  </div>
+</div>

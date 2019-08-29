@@ -7,9 +7,9 @@ export default class MenuController {
         name: "Dashboard"
       },
       {
-        state: "app.administrador",
+        state: "app.usuario",
         icon: "icon-users",
-        name: "Administrador"
+        name: "Usuários"
       },
       {
         state: "app.processo",
