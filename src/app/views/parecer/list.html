@@ -3,9 +3,9 @@
     <form class="form-inline" ng-submit="vm.load()">
       <h5>{{ vm.title }}</h5>
           <div class="form-group form-inline" style="width: 100%;">
-            <select style="width: 78%;" ng-model="vm.usuario" class="form-control" ng-options="i.login for i in vm.usuarios"></select>
+            <select ng-model="vm.usuario" class="form-control" ng-options="i.login for i in vm.usuarios"></select>
             </select>
-            <button style="width: 20%; margin-left: 2%;" ng-disabled="!vm.usuario" ng-click="vm.buscar(vm.usuario.id)" class="btn btn-success">Buscar</a>
+            <button style="margin-left: 2%;" ng-disabled="!vm.usuario" ng-click="vm.buscar(vm.usuario.id)" class="btn btn-success">Buscar</a>
           </div>
     </form>
   </nav>

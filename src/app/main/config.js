@@ -4,7 +4,12 @@ import MenuController from "./menu.controller";
 
 import "../../assets/bootstrap-solid.svg";
 
-export const mainConfig = ($stateProvider, $urlRouterProvider) => {
+export const mainConfig = (
+  $stateProvider,
+  $urlRouterProvider,
+  $locationProvider
+) => {
+  $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise("/login");
   $stateProvider
     .state("app", {
@@ -28,4 +33,8 @@ export const mainConfig = ($stateProvider, $urlRouterProvider) => {
     });
 };
 
-mainConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
+mainConfig.$inject = [
+  "$stateProvider",
+  "$urlRouterProvider",
+  "$locationProvider"
+];
